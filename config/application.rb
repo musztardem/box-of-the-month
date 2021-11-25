@@ -38,5 +38,8 @@ module BoxOfTheMonth
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # Custom app configuration
+    config.x.fakepay_api_key = ENV['FAKEPAY_API_KEY']
   end
 end
