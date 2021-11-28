@@ -30,9 +30,7 @@ group :development, :test do
   gem 'faker'
   gem 'rspec-rails', '~> 5.0.0'
   gem 'ruby_jard'
-
-  gem 'pry-rails'
-
+  gem 'vcr'
 end
 
 group :development do

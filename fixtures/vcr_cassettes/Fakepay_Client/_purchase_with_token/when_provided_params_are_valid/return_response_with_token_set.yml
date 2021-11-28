@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.fakepay.io/purchase
+    body:
+      encoding: UTF-8
+      string: '{"token":"99c92b7fd6285a1a55786eca22657c","amount":"1000"}'
+    headers:
+      User-Agent:
+      - Faraday v1.8.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=b77bd5473370948c5ae31d8598a5d1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - Cowboy
+      date:
+      - Sun, 28 Nov 2021 13:48:07 GMT
+      connection:
+      - keep-alive
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-permitted-cross-domain-policies:
+      - none
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - W/"1b3a650e88fdee949fb479674146989d"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - d7539ae3-5502-4d33-8f6d-98329c384bd1
+      x-runtime:
+      - '0.015711'
+      transfer-encoding:
+      - chunked
+      via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"token":"99c92b7fd6285a1a55786eca22657c","success":true,"error_code":null}'
+  recorded_at: Sun, 28 Nov 2021 13:48:07 GMT
+recorded_with: VCR 6.0.0
