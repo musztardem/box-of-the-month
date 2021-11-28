@@ -31,6 +31,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 5.0.0'
   gem 'ruby_jard'
   gem 'vcr'
+  gem 'shoulda-matchers'
 end
 
 group :development do

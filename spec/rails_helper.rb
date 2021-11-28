@@ -64,6 +64,7 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  config.include FactoryBot::Syntax::Methods
 end
 
 VCR.configure do |config|
@@ -71,4 +72,11 @@ VCR.configure do |config|
   config.hook_into :faraday
 
   config.configure_rspec_metadata!
+end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
 end
