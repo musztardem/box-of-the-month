@@ -9,7 +9,7 @@ class ApiBase < Grape::API
 
   rescue_from :all do |e|
     details = { type: e, message: e.message, backtrace: e.backtrace }
-    BoxOfTheMonth.logger.error JSON.pretty_generate(details)
+    Rails.logger.error JSON.pretty_generate(details)
     error!(details, 500)
   end
 end

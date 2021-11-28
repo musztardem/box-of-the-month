@@ -23,6 +23,7 @@ gem 'dry-struct'
 gem 'dry-types'
 gem 'dry-validation'
 gem 'dry-matcher'
+gem 'dry-monads'
 
 gem 'grape'
 gem 'grape-entity'
