@@ -24,6 +24,10 @@ gem 'dry-types'
 gem 'dry-validation'
 gem 'dry-matcher'
 
+gem 'grape'
+gem 'grape-entity'
+gem 'grape_on_rails_routes'
+
 group :development, :test do
   gem 'dotenv-rails'
   gem 'factory_bot_rails'
