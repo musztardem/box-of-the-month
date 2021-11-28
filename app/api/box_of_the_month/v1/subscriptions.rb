@@ -20,13 +20,25 @@ module BoxOfTheMonth
             requires :expiration_month, type: String, allow_blank: false
             requires :expiration_year, type: String, allow_blank: false
             requires :cvv, type: String, allow_blank: false
-            requires :billing_zip_code, type: String, allow_blank: false
+            requires :zip_code, type: String, allow_blank: false
           end
           requires :subscription_plan_id, type: Integer, allow_blank: false
         end
         post do
-          ::Subscriptions::Create.new.call do |result|
+          shipping_information = ShippingInformationValue.new(params[:shipping_information])
+          billing_information = BillingInformationValue.new(params[:billing_information])
+
+          ::Subscriptions::Create.new.call(
+            customer_id: params[:customer_id],
+            shipping_information: shipping_information,
+            billing_information: billing_information,
+            subscription_plan_id: params[:subscription_plan_id]
+          ) do |result|
             result.success { status :created }
+            result.failure(:customer_not_found) { error!({ message: 'Customer does not exist' }, :not_found) }
+            result.failure(:subscription_plan_not_found) do
+              error!({ message: 'Subscription Plan does not exist' }, :not_found)
+            end
             result.failure { status :service_unavailable }
           end
         end
