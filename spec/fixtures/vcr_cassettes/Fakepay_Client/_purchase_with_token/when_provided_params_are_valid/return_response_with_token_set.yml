@@ -21,7 +21,7 @@ http_interactions:
       server:
       - Cowboy
       date:
-      - Sun, 28 Nov 2021 13:48:08 GMT
+      - Mon, 29 Nov 2021 09:59:33 GMT
       connection:
       - keep-alive
       x-frame-options:
@@ -43,9 +43,9 @@ http_interactions:
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - 4474c947-7ddc-459e-8eeb-a32ae8d081cc
+      - 1a39c509-fbf4-4d11-b580-6957177998b0
       x-runtime:
-      - '0.010635'
+      - '0.011238'
       transfer-encoding:
       - chunked
       via:
@@ -53,5 +53,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"token":"99c92b7fd6285a1a55786eca22657c","success":true,"error_code":null}'
-  recorded_at: Sun, 28 Nov 2021 13:48:08 GMT
+  recorded_at: Mon, 29 Nov 2021 09:59:33 GMT
 recorded_with: VCR 6.0.0

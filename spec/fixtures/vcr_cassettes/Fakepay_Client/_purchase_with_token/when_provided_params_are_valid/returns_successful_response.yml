@@ -5,7 +5,7 @@ http_interactions:
     uri: https://www.fakepay.io/purchase
     body:
       encoding: UTF-8
-      string: '{"amount":"1000","card_number":"4242424242424242","cvv":"123","expiration_month":"09","expiration_year":"2024","zip_code":"10045"}'
+      string: '{"token":"99c92b7fd6285a1a55786eca22657c","amount":"1000"}'
     headers:
       User-Agent:
       - Faraday v1.8.0
@@ -21,7 +21,7 @@ http_interactions:
       server:
       - Cowboy
       date:
-      - Sun, 28 Nov 2021 13:48:05 GMT
+      - Mon, 29 Nov 2021 09:59:33 GMT
       connection:
       - keep-alive
       x-frame-options:
@@ -39,19 +39,19 @@ http_interactions:
       content-type:
       - application/json; charset=utf-8
       etag:
-      - W/"3051e88cd58efbd395e3737e6c6370b1"
+      - W/"1b3a650e88fdee949fb479674146989d"
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - a1812292-defc-4548-b495-c1f7f39e76dc
+      - 5f4eaae0-2360-4c0e-aeac-891b1414206a
       x-runtime:
-      - '0.014180'
+      - '0.011716'
       transfer-encoding:
       - chunked
       via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"token":"59e5913eebbe32e008d1cfe931bfe0","success":true,"error_code":null}'
-  recorded_at: Sun, 28 Nov 2021 13:48:06 GMT
+      string: '{"token":"99c92b7fd6285a1a55786eca22657c","success":true,"error_code":null}'
+  recorded_at: Mon, 29 Nov 2021 09:59:34 GMT
 recorded_with: VCR 6.0.0
