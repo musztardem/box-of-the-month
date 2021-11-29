@@ -5,18 +5,9 @@ class CustomerSubscriptionsRepository
     @relation = relation
   end
 
-  def load(id:)
-    relation.find(id)
-  end
-
   def create(customer_id:, subscription_plan_id:, last_successful_payment_date: nil)
     relation.create!(customer_id: customer_id, subscription_plan_id: subscription_plan_id,
-                     last_successful_payment_date: last_successful_payment_date).id
-  end
-
-  def set_last_successful_payment_date(customers_subscription_id:, date:)
-    load(id: customers_subscription_id)
-      .update!(id: customers_subscription_id, last_successful_payment_date: date)
+                     last_successful_payment_date: last_successful_payment_date)
   end
 
   private

@@ -35,9 +35,11 @@ module BoxOfTheMonth
             subscription_plan_id: params[:subscription_plan_id]
           ) do |result|
             result.success { status :created }
-            result.failure(:customer_not_found) { error!({ message: 'Customer does not exist' }, :not_found) }
-            result.failure(:subscription_plan_not_found) do
-              error!({ message: 'Subscription Plan does not exist' }, :not_found)
+            result.failure(:not_found) do |_code, model|
+              error!({ message: "#{model} does not exist" }, :not_found)
+            end
+            result.failure(:payment_failed) do |_code, msg|
+              error!({ message: msg }, :unprocessable_entity)
             end
             result.failure { status :service_unavailable }
           end
